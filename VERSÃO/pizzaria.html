@@ -1,40 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pizzaria.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <title>Pizzaria Charlo's</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pizzaria.css">
+  
+  <title>Pizzaria Charlo's</title>
 </head>
 <body>
-    <div class="container">
-        <h1 id="titulo">PIZZARIA CHARLO'S</h1>
-    <div class="cabeçalho">
-        <button onclick="mostrarConteudo('adicionar')">
-        <i class="fa-solid fa-pizza-slice" style="color: #f08c00;"></i>
-        </button>
-        <button onclick="mostrarConteudo('cardapio')">
-        <i class="fa-solid fa-pizza-slice" style="color: #00f058;"></i>
-        </button>
-    </div>
-    <!-- Seção Adicionar -->
-    <div id="adicionar" class="hidden">
-      <h2 class="color">Adicionar Pizza</h2>
-      <div class="formar-grupo">
-        <label class="color" for="nome">Nome da Pizza:</label>
-        <input class="color" type="text" id="nome" placeholder="Digite o nome da pizza">
-      </div>
-      <div class="formar-grupo">
-        <label class="color" for="sabor">Ingredientes da Pizza:</label>
-        <input class="color" type="text" id="sabor" placeholder="Digite os ingredientes da pizza">
-      </div>
+  <center>
+  <div class="container">
+    <h1>PIZZARIA CHARLO'S</h1>
+    <div class="menu">
+      <button onclick="mostrarConteudo('adicionar')">Adicionar Pizza</button>
+      <button onclick="mostrarConteudo('cardapio')">Cardapio</button>
+      <button onclick="mostrarConteudo('pedido')">Fazer pedido</button>
+      <button onclick="mostrarConteudo('relatorio')">Relatorio de Vendas</button>
     </div>
 
-    <!-- Seção Cardápio -->
-    <div id="cardapio" class="hidden">
-      <h2 class="color">Cardápio</h2>
-    </div>
-    </div>
+    <!-- Seção Adicionar -->
+     <div id="adicionar" class="hidden">
+      <h2>Adicionar Pizza</h2>
+      <div class="grupo">
+        <label for="sabor">Sabor: </label>
+        <input type="text" id="sabor" placeholder="Insira o sabor da pizza">
+      </div>
+      <div class="grupo">
+        <label for="igredientes">ingredientes: </label>
+        <input type="text" id="igredientes" placeholder="Insira os ingredientes">
+      </div>
+      <div class="grupo">
+        <label for="valor">Valor: </label>
+        <input type="number" id="valor" placeholder="Insira o preço da pizza">
+      </div>
+      <button onclick="adicionarPizza()">Adicionar pizza</button>
+     </div>
+
+     <!-- Seção Cardapio -->
+      <div id="cardapio" class="hidden">
+        <h2>Cardapio</h2>
+        <div class="grupo">
+          <label for="pesquisa">Pesquisar Sabor</label>
+          <input type="text" id="pesquisa" placeholder="Digite o sabor da pizza" oninput="pesquisarPizza()">
+          <table>
+            <thead>
+              <tr> 
+                <th>Sabor</th>
+                <th>Ingredientes</th>
+                <th>Preço</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-pizzas">
+              <!-- Pizzas serão exibidas aqui -->
+            </tbody>
+          </table>
+        </div>
+        <!-- Seção de Pedido -->
+     
+      </div>
+
+  </div>
+  </center>
+
+<script src="pizzaria.js"></script>
 </body>
 </html>
