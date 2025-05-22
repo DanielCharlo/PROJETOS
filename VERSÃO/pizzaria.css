@@ -1,8 +1,17 @@
 .container {
      max-width: 1000px;
     margin: auto;
-    background: white;
+    background: rgb(44, 41, 41);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.hidden {
+    display: none;
+}
+h1 , h2 , h3 , h4 , h5 , label {
+    color: rgb(229, 215, 196);
+}
+label {
+    margin-bottom: 5px;
 }
