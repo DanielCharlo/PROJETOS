@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="loginPizzaria.css">
+    <title>Ransoware</title>
+</head>
+<body>
+    <div id="login">
+        <div class="grupo">
+            <label for="usuario">Usuario: </label>
+            <input type="text" id="usuario" placeholder="Digite seu Usuario">
+        </div>
+        <div class="grupo">
+            <label for="senha">Senha: </label>
+            <input type="password" id="senha" placeholder="Digite sua senha">
+        </div>
+        <button onclick="fazerLogin()">Entrar</button>
+        <p id="mensagem" class="mensagem hidden"></p>
+    </div>
+    <script>
+    function exibirMensagem(texto, tipo) {
+    const mensagem = document.getElementById("mensagem");
+    mensagem.textContent = texto;
+   
+    mensagem.className = `mensagem ${tipo}`;
+    mensagem.classList.remove("hidden");
+
+    setTimeout(() => {
+        mensagem.classList.add("hidden")
+    }, 5000);
+}
+
+function fazerLogin() {
+    const usuario = document.getElementById("usuario").value;
+    const senha = document.getElementById("senha").value;
+
+    const usuarioCorreto = "Charlo";
+    const senhaCorreta = "incorreta";
+
+    if (usuario === usuarioCorreto && senha === senhaCorreta) {
+        exibirMensagem("Login realizado! ", "sucesso");
+        setTimeout (() => {
+            
+            window.location.href ="pizzaria.html";
+        }, 2000); 
+    }else {
+        exibirMensagem("Usuario ou senha incorretos.", "erro");
+    }
+}  
+
+</script>
+</body>
+</html>
