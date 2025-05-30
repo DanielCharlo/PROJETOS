@@ -54,7 +54,7 @@ let biblioteca = [];
       } else {
         alert("Livro não encontrado.");
       }
-    }
+    } 
 
     function alterarLivro() {
       if (livroParaAlterar) {
