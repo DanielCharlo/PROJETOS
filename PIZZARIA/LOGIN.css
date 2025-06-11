@@ -1,182 +1,86 @@
-/* Reset básico para garantir uniformidade */
-* {
+/* Reset e base */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Temas claro e escuro */
-body.light {
-  background-color: #fefefe;
-  color: #333;
-}
-
-body.dark {
-  background-color: #121212;
-  color: #eee;
-}
-
-/* Container geral para a página de login */
-.login-container {
+/* Container do login */
+#login {
   max-width: 400px;
-  margin: 60px auto;
-  padding: 30px 25px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  background-color: inherit;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
 }
 
-/* Título da página de login */
-.login-container h1 {
-  margin-bottom: 25px;
-  font-weight: 700;
-  font-size: 1.8rem;
-  text-align: center;
-}
-
-/* Formulário */
-.login-form {
-  width: 100%;
-}
-
-/* Grupos de campos */
-.form-group {
+/* Grupo de inputs */
+.grupo {
   margin-bottom: 20px;
 }
 
-label {
+.grupo label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  font-size: 0.95rem;
-}
-
-/* Inputs texto e senha */
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1.8px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-  background-color: #fff;
   color: #333;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
-  border-color: #0078d7;
-  outline: none;
-}
-
-/* Tema escuro para inputs */
-body.dark input[type="text"],
-body.dark input[type="password"] {
-  background-color: #1e1e1e;
-  border-color: #444;
-  color: #eee;
-}
-
-body.dark input[type="text"]:focus,
-body.dark input[type="password"]:focus {
-  border-color: #0a84ff;
+.grupo input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
 /* Botão de login */
-button.login-btn {
+button {
   width: 100%;
-  background-color: #0078d7;
+  background-color: #007bff;
   color: white;
-  padding: 12px 0;
-  font-weight: 700;
-  font-size: 1rem;
-  border-radius: 5px;
   border: none;
+  padding: 12px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
 }
 
-button.login-btn:hover {
-  background-color: #005a9e;
+button:hover {
+  background-color: #0056b3;
 }
 
-body.dark button.login-btn {
-  background-color: #0a84ff;
-}
-
-body.dark button.login-btn:hover {
-  background-color: #0060df;
-}
-
-/* Mensagens de feedback */
+/* Mensagens */
 .mensagem {
-  margin-top: 15px;
-  padding: 10px 14px;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 0.9rem;
+  margin-top: 16px;
+  font-weight: bold;
   text-align: center;
+  padding: 10px;
+  border-radius: 6px;
 }
 
-.sucesso {
+.mensagem.sucesso {
   background-color: #d4edda;
   color: #155724;
-  border: 1.5px solid #c3e6cb;
 }
 
-.erro {
+.mensagem.erro {
   background-color: #f8d7da;
   color: #721c24;
-  border: 1.5px solid #f5c6cb;
 }
 
-body.dark .sucesso {
-  background-color: #234d29;
-  color: #a6d785;
-  border-color: #1b3b1f;
+.hidden {
+  display: none;
 }
 
-body.dark .erro {
-  background-color: #5c1a22;
-  color: #f9939a;
-  border-color: #52171d;
-}
-
-/* Link para recuperação de senha ou cadastro */
-.login-links {
-  margin-top: 18px;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-.login-links a {
-  color: #0078d7;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.login-links a:hover {
-  color: #005a9e;
-}
-
-body.dark .login-links a {
-  color: #0a84ff;
-}
-
-body.dark .login-links a:hover {
-  color: #0060df;
-}
-
-/* Responsividade para telas menores */
+/* Responsividade */
 @media (max-width: 480px) {
-  .login-container {
-    margin: 40px 15px;
-    padding: 25px 20px;
+  #login {
+    margin: 40px 20px;
+    padding: 20px;
   }
 }
