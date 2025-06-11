@@ -204,3 +204,4 @@ function atualizarRelatorio() {
   // mostra o total de dinheiro arrecadado
   totalSpan.textContent = total.toFixed(2);
 }
+
